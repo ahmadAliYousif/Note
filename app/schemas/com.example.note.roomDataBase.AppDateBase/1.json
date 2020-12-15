@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d5c82bdf3d7e9331c1bc314249c08e20",
+    "entities": [
+      {
+        "tableName": "NoteItems",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_note` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title_note` TEXT, `body_note` TEXT, `date_note` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idNote",
+            "columnName": "id_note",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titleNote",
+            "columnName": "title_note",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bodyNote",
+            "columnName": "body_note",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateNote",
+            "columnName": "date_note",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_note"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd5c82bdf3d7e9331c1bc314249c08e20')"
+    ]
+  }
+}
